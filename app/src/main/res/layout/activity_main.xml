@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/redTeamScoreLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/blueTeamScoreLayout"
+        android:background="@color/colorRedTeam">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/redScore"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/controlRedTeam">
+
+            <TextView
+                android:id="@+id/redTeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="100pt"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/colorScore"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutSetRed"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutSetRed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/redTeamScore"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/redSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="40pt"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorScore"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/redBall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ball"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/controlRedTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/redScore"
+            android:background="@color/colorController">
+
+            <Button
+                android:id="@+id/pointRedBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Point"
+                android:textAllCaps="false"
+                android:textColor="@color/colorScore"
+                android:fontFamily="@font/ubuntu_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:backgroundTint="@color/colorRedTeam"/>
+
+            <TextView
+                android:id="@+id/redPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 1"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/colorScore"
+                app:layout_constraintStart_toEndOf="@id/pointRedBtn"
+                app:layout_constraintEnd_toStartOf="@id/pointBackRedBtn"
+                app:layout_constraintTop_toTopOf="@id/pointRedBtn"
+                app:layout_constraintBottom_toBottomOf="@id/pointBackRedBtn"/>
+
+            <Button
+                android:id="@+id/pointBackRedBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back Point"
+                android:textAllCaps="false"
+                android:textColor="@color/colorScore"
+                android:fontFamily="@font/ubuntu_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:backgroundTint="@color/colorRedTeam"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blueTeamScoreLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toEndOf="@id/redTeamScoreLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:background="@color/colorBlueTeam">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/blueScore"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/controlBlueTeam">
+
+            <TextView
+                android:id="@+id/blueTeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="100pt"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/colorScore"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutSetBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutSetBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/blueTeamScore" >
+
+                <TextView
+                    android:id="@+id/blueSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="40pt"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorScore"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/blueBall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ball"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/controlBlueTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blueScore"
+            android:background="@color/colorController">
+
+            <Button
+                android:id="@+id/pointBackBlueBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back Point"
+                android:textAllCaps="false"
+                android:textColor="@color/colorScore"
+                android:fontFamily="@font/ubuntu_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:backgroundTint="@color/colorBlueTeam"/>
+
+            <TextView
+                android:id="@+id/bluePlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 2"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/colorScore"
+                app:layout_constraintStart_toEndOf="@id/pointBackBlueBtn"
+                app:layout_constraintEnd_toStartOf="@id/pointBlueBtn"
+                app:layout_constraintTop_toTopOf="@id/pointBackBlueBtn"
+                app:layout_constraintBottom_toBottomOf="@id/pointBlueBtn"/>
+
+            <Button
+                android:id="@+id/pointBlueBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Point"
+                android:textAllCaps="false"
+                android:textColor="@color/colorScore"
+                android:fontFamily="@font/ubuntu_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:backgroundTint="@color/colorBlueTeam"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pingpong Scoreboard</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="service">Service</string>
+    <string name="best_of">Best Of</string>
+</resources>
